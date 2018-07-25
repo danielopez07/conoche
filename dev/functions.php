@@ -294,6 +294,16 @@ function wprig_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'wprig_styles' );
 
+if ( ! is_admin() ) {
+	/**
+	 * Load dashicons outside de admin area
+	 */
+	function load_dashicons_font() {
+		wp_enqueue_style( 'dashicons' );
+	}
+	add_action( 'wp_enqueue_scripts', 'load_dashicons_font' );
+}
+
 /**
  * Enqueue scripts.
  */
