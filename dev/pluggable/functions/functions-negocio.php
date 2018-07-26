@@ -124,5 +124,8 @@ function get_contacto( $postid = '' ) {
 	if ( $web ) {
 		$contacto = $contacto . '<div>Sitio web: ' . $web . '</div>';
 	}
+	if ( $fb ) {
+		$contacto = $contacto . '<div><span class="dashicons dashicons-facebook-alt"></span>' . $fb . '</div>';
+	}
 	echo $contacto;
 }
