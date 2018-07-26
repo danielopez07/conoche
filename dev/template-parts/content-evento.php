@@ -46,4 +46,30 @@
 		?>
 	</div><!-- .entry-content -->
 
+	<div>
+	<!-- Getting the author id: get_the_author_meta( 'ID' ); -->
+		<h1><?php echo get_the_author_meta( 'ID' ); ?> </h1>
+		<?php
+		$args = array(
+			'author'    => get_the_author_meta( 'ID' ),
+			'post_type' => 'negocio',
+		);
+		// The Query for Getting Negocio.
+		$the_query = new WP_Query( $args );
+
+		// The Loop.
+		if ( $the_query->have_posts() ) {
+			echo '<ul>';
+			while ( $the_query->have_posts() ) {
+				$the_query->the_post();
+				echo '<li>' . get_the_title() . '</li>';
+				echo '<li>' . get_the_id() . '</li>';
+			}
+			echo '</ul>';
+			/* Restore original Post Data */
+			wp_reset_postdata();
+		}
+		?>
+	</div>
+
 </article><!-- #post-<?php the_ID(); ?> -->
