@@ -290,6 +290,7 @@ function wprig_styles() {
 	wp_register_style( 'wprig-widgets', get_theme_file_uri( '/css/widgets.css' ), array(), '20180514' );
 	wp_register_style( 'wprig-front-page', get_theme_file_uri( '/css/front-page.css' ), array(), '20180514' );
 	wp_register_style( 'wprig-eventos', get_theme_file_uri( '/css/eventos.css' ), array(), '20180720' );
+	wp_register_style( 'wprig-negocios', get_theme_file_uri( '/css/negocios.css' ), array(), '20180725' );
 }
 add_action( 'wp_enqueue_scripts', 'wprig_styles' );
 
@@ -369,3 +370,8 @@ require get_template_directory() . '/pluggable/lazyload/lazyload.php';
  * Funciones relacionadas al evento.
  */
 require get_template_directory() . '/pluggable/functions/functions-evento.php';
+
+/**
+ * Funciones relacionadas al negocio.
+ */
+require get_template_directory() . '/pluggable/functions/functions-negocio.php';
