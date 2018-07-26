@@ -59,17 +59,31 @@
 
 		// The Loop.
 		if ( $the_query->have_posts() ) {
-			echo '<ul>';
 			while ( $the_query->have_posts() ) {
 				$the_query->the_post();
-				echo '<li>' . get_the_title() . '</li>';
-				echo '<li>' . get_the_id() . '</li>';
+				$negocio_id = get_the_id();
 			}
-			echo '</ul>';
 			/* Restore original Post Data */
 			wp_reset_postdata();
 		}
 		?>
 	</div>
-
+	<div class="negocio-horario">
+		<h3>Horario</h3>
+		<?php
+		get_horario( $negocio_id );
+		?>
+	</div>
+	<div class="negocio-ubicacion">
+		<h3>Ubicación</h3>
+		<?php
+		get_ubicacion( $negocio_id );
+		?>
+	</div>
+	<div class="negocio-contacto">
+		<h3>Contacto</h3>
+		<?php
+		get_contacto( $negocio_id );
+		?>
+	</div>
 </article><!-- #post-<?php the_ID(); ?> -->
