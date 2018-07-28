@@ -740,6 +740,10 @@ textarea {
 
 .site-branding {
 	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
 }
 
 .site-title {
@@ -783,9 +787,7 @@ textarea {
 
 @media (--wide-menu-query) {
 	.site-branding {
-		display: flex;
-		justify-content: space-around;
-		align-items: center;
+		flex-direction: row;
 	}
 }
 
