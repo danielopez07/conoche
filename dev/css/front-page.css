@@ -17,17 +17,16 @@
 		grid-gap: 2rem;
 	}
 
-	.post {
+	.evento {
 		margin-bottom: 0;
 		padding: 0 2rem;
 		border: 1px solid hsl(0, 0%, 50%);
+		background-color: #99161c;
+		border-radius: 10px;
 	}
 
-	.post:first-of-type {
-		grid-column: span 2;
-		margin: 0;
-		padding: 0;
-
+	.evento:hover {
+		border: 1px solid #FFF;
 	}
 
 	.wp-block-image.alignleft,

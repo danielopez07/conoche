@@ -16,12 +16,17 @@ get_header();
 */
 wp_print_styles( array( 'wprig-content', 'wprig-front-page' ) ); // Note: If this was already done it will be skipped.
 
+$args = array(
+	'post_type' => 'evento',
+);
+$query = new WP_Query( $args );
+
 ?>
 	<main id="primary" class="site-main">
 
 		<?php
-		while ( have_posts() ) :
-			the_post();
+		while ( $query->have_posts() ) :
+			$query->the_post();
 
 			get_template_part( 'template-parts/content', 'front' );
 
@@ -32,4 +37,5 @@ wp_print_styles( array( 'wprig-content', 'wprig-front-page' ) ); // Note: If thi
 	</main><!-- #primary -->
 
 <?php
+// wp_reset_postdata();
 get_footer();

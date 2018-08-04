@@ -553,7 +553,7 @@ html {
 }
 
 body {
-	background: #fff;
+	background: #000;
 	/* Fallback for when there is no custom background color defined. */ }
 
 blockquote, q {
@@ -643,7 +643,7 @@ input[type="submit"] {
 	border-color: #ccc #ccc #bbb;
 	border-radius: 3px;
 	background: #e6e6e6;
-	color: rgba(0, 0, 0, 0.8);
+	color: #FFF;
 	font-size: 12px;
 	font-size: 0.75rem;
 	line-height: 1;
@@ -684,7 +684,7 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: #666;
+	color: #FFF;
 	border: 1px solid #ccc;
 	border-radius: 3px;
 	padding: .2em .5em;
@@ -774,12 +774,18 @@ textarea {
 	border-radius: 10px;
 	padding: .7em 1em;
 	background: #99161c;
+	border: 1px solid #99161c;
 }
+.busqueda-conoche:hover{
+	border: 1px solid #FFF;
+}
+
 .div-searchbar,
 .searchsubmit,
 #menu-search {
-	background-color: #fcfcfc;
+	background-color: #99161c;
 	border-style: none;
+	text-align: center;
 }
 #iconsearch-header {
 	vertical-align: sub;
@@ -821,7 +827,7 @@ textarea {
 	width: 100%;
 	padding: .5em 1em .5em 0;
 	text-decoration: none;
-	color: black;
+	/* color: black; */
 }
 
 .main-navigation a:hover,
