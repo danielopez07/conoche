@@ -1,7 +1,7 @@
 {
 	"variables": {
 		"global-font-color": "#fff",
-		"global-font-family": "'Crimson Text', serif",
+		"global-font-family": "'Quicksand', serif",
     	"global-font-size": "20",
     	"global-font-line-height": "1.4",
     	"highlight-font-family": "'Roboto Condensed', sans-serif",

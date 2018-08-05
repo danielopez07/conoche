@@ -483,6 +483,7 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: var(--highlight-font-family);
+	font-weight: lighter;
 	color: #32373c;
 	clear: both;
 }
@@ -613,23 +614,31 @@ table {
 # Links
 --------------------------------------------------------------*/
 a {
-	color: #0073aa;
+	/* color: #0073aa; */
+	color: #FFF;
+	text-decoration: none;
 }
 
 a:visited {
-	color: #333;
+	/* color: #333; */
+	color: #FFF;
+	text-decoration: none;
 }
 
 a:hover, a:focus, a:active {
-	color: #00a0d2;
+	/* color: #00a0d2; */
+	color: #9DA2A6;
+	text-decoration: none;
 }
 
 a:focus {
 	outline: thin dotted;
+	text-decoration: none;
 }
 
 a:hover, a:active {
 	outline: 0;
+	text-decoration: none;
 }
 
 /*--------------------------------------------------------------
@@ -832,7 +841,7 @@ textarea {
 
 .main-navigation a:hover,
 .main-navigation a:focus {
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 .main-navigation ul {
@@ -886,7 +895,7 @@ textarea {
 		position: absolute;
 		top: 100%;
 		flex-direction: column;
-		background: white;
+		background: #0006;
 		margin-left: 0;
 		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 		z-index: 1;

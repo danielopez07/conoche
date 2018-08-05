@@ -10,6 +10,9 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+	<?php wprig_post_thumbnail(); ?>
+
 	<header class="entry-header">
 		<?php
 		the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
@@ -32,8 +35,6 @@
 		endif;
 		?>
 	</header><!-- .entry-header -->
-
-	<?php wprig_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
@@ -61,26 +62,12 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
+	<!-- <footer class="entry-footer">
 		<?php
 		wprig_post_categories();
 		wprig_post_tags();
 		wprig_edit_post_link();
 		?>
-	</footer><!-- .entry-footer -->
+	</footer> -->
+	<!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
-
-<?php
-if ( is_singular() ) :
-	the_post_navigation(
-		array(
-			'prev_text' => '<div class="post-navigation-sub"><span>' . esc_html__( 'Previous:', 'wprig' ) . '</span></div>%title',
-			'next_text' => '<div class="post-navigation-sub"><span>' . esc_html__( 'Next:', 'wprig' ) . '</span></div>%title',
-		)
-	);
-
-	// If comments are open or we have at least one comment, load up the comment template.
-	if ( comments_open() || get_comments_number() ) :
-		comments_template();
-	endif;
-endif;

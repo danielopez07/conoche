@@ -195,9 +195,9 @@ function wprig_fonts_url() {
 	 */
 	$roboto = esc_html_x( 'on', 'Roboto Condensed font: on or off', 'wprig' );
 	/**
-	 * Translator: If Crimson Text does not support characters in your language, translate this to 'off'.
+	 * Translator: If Quicksand does not support characters in your language, translate this to 'off'.
 	 */
-	$crimson_text = esc_html_x( 'on', 'Crimson Text font: on or off', 'wprig' );
+	$quicksand = esc_html_x( 'on', 'Quicksand font: on or off', 'wprig' );
 
 	$font_families = array();
 
@@ -205,11 +205,11 @@ function wprig_fonts_url() {
 		$font_families[] = 'Roboto Condensed:400,400i,700,700i';
 	}
 
-	if ( 'off' !== $crimson_text ) {
-		$font_families[] = 'Crimson Text:400,400i,600,600i';
+	if ( 'off' !== $quicksand ) {
+		$font_families[] = 'Quicksand:300,300i,400,400i';
 	}
 
-	if ( in_array( 'on', array( $roboto, $crimson_text ) ) ) {
+	if ( in_array( 'on', array( $roboto, $quicksand ) ) ) {
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
 			'subset' => urlencode( 'latin,latin-ext' ),
