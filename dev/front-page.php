@@ -16,8 +16,25 @@ get_header();
 */
 wp_print_styles( array( 'wprig-content', 'wprig-front-page' ) ); // Note: If this was already done it will be skipped.
 
+$today = date('Ymd');
+
 $args = array(
-	'post_type' => 'evento',
+	'post_type'  => 'evento',
+	'meta_key'   => 'fecha_de_inicio',
+	'orderby'    => 'meta_value_num',
+	'order'      => 'ASC',
+	'meta_query' => array(
+		array(
+			'key'     => 'fecha_de_inicio',
+			'compare' => '>=',
+			'value'   => $today,
+		),
+		// array(
+		// 	'key'		=> 'end_date',
+		// 	'compare'	=> '>=',
+		// 	'value'		=> $today,
+		// )
+	),
 );
 $query = new WP_Query( $args );
 
@@ -25,6 +42,7 @@ $query = new WP_Query( $args );
 	<main id="primary" class="site-main">
 
 		<?php
+
 		while ( $query->have_posts() ) :
 			$query->the_post();
 
@@ -37,5 +55,6 @@ $query = new WP_Query( $args );
 	</main><!-- #primary -->
 
 <?php
-// wp_reset_postdata();
+wp_reset_postdata();
+
 get_footer();

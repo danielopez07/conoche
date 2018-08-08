@@ -11,7 +11,9 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php wprig_post_thumbnail(); ?>
+	<?php
+		wprig_post_thumbnail();
+	?>
 
 	<header class="entry-header">
 		<?php
@@ -29,6 +31,8 @@
 					$dateformatstring = "l d F, Y";
 					$unixtimestamp    = strtotime( get_field( 'fecha_de_inicio' ) );
 					echo esc_html( date_i18n( $dateformatstring, $unixtimestamp ) );
+					// echo '<br>';
+					// the_field( 'fecha_de_inicio' );
 				?>
 			</div><!-- .entry-meta -->
 			<?php
