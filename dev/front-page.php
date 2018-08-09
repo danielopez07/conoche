@@ -17,6 +17,12 @@ get_header();
 wp_print_styles( array( 'wprig-content', 'wprig-front-page' ) ); // Note: If this was already done it will be skipped.
 
 $today = date('Ymd');
+// echo $today;
+// $time = date('H:i');
+// echo $time;
+
+// https://www.advancedcustomfields.com/resources/date-picker/
+// https://developer.wordpress.org/reference/classes/wp_query/
 
 $args = array(
 	'post_type'  => 'evento',
@@ -24,16 +30,17 @@ $args = array(
 	'orderby'    => 'meta_value_num',
 	'order'      => 'ASC',
 	'meta_query' => array(
+		'relation' => 'OR',
 		array(
 			'key'     => 'fecha_de_inicio',
 			'compare' => '>=',
 			'value'   => $today,
 		),
-		// array(
-		// 	'key'		=> 'end_date',
-		// 	'compare'	=> '>=',
-		// 	'value'		=> $today,
-		// )
+		array(
+			'key'     => 'fecha_de_finalizacion',
+			'compare' => '>=',
+			'value'   => $today,
+		)
 	),
 );
 $query = new WP_Query( $args );
