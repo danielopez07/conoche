@@ -1,0 +1,17 @@
+/*--------------------------------------------------------------
+# Header Landing
+--------------------------------------------------------------*/
+
+.site-header {
+	height: 100vh;
+	max-width: 100%;
+}
+
+.main-navigation{
+	margin: 0 auto;
+}
+
+.busqueda-conoche {
+    margin: auto;
+    width: 450px;
+}

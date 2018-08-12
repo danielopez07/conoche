@@ -9,7 +9,17 @@
  * @package wprig
  */
 
+/*
+* Include the component stylesheet for the content.
+* This call runs only once on index and archive pages.
+* At some point, override functionality should be built in similar to the template part below.
+*/
+wp_print_styles( array( 'header-landing' ) ); // Note: If this was already done it will be skipped.
+
 ?>
+
+
+
 <!doctype html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
@@ -21,13 +31,41 @@
 		<script>document.documentElement.classList.remove("no-js");</script>
 	<?php endif; ?>
 
-	<?php wp_head(); ?>
+	<?php wp_head();
+
+	/*
+	* Include the component stylesheet for the content.
+	* This call runs only once on index and archive pages.
+	* At some point, override functionality should be built in similar to the template part below.
+	*/
+	wp_print_styles( array( 'wprig-header-landing' ) ); // Note: If this was already done it will be skipped.
+	?>
 </head>
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'wprig' ); ?></a>
-		<header id="masthead" class="site-header">
+
+		<header id="masthead" class="site-header background">
+			<nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Main menu', 'wprig' ); ?>" >
+				<button class="menu-toggle" aria-label="<?php esc_attr_e( 'Open menu', 'wprig' ); ?>" aria-controls="primary-menu" aria-expanded="false">
+					<?php esc_html_e( 'Menu', 'wprig' ); ?>
+				</button>
+
+				<div class="primary-menu-container">
+					<?php
+
+					wp_nav_menu(
+						array(
+							'theme_location' => 'primary',
+							'menu_id'        => 'primary-menu',
+							'container'      => 'ul',
+						)
+					);
+
+					?>
+				</div>
+			</nav><!-- #site-navigation -->
 			<?php if ( has_header_image() ) : ?>
 				<figure class="header-image">
 					<?php the_header_image_tag(); ?>
@@ -50,9 +88,7 @@
 						<p class="site-description"><?php echo $wprig_description; /* WPCS: xss ok. */ ?></p>
 					<?php endif; ?>
 
-					<div class="busqueda-conoche">
-						<?php get_search_form(); ?>
-					</div>
+
 				</div><!-- titulo -->
 
 				<div class="fecha-social">
@@ -60,43 +96,17 @@
 					<p>Enlaces sociales ...</p>
 				</div>
 			</div><!-- .site-branding -->
+			<div class="busqueda-conoche">
+						<?php get_search_form(); ?>
+			</div>
+			<div class="star star-1"></div>
+			<div class="star star-2"></div>
+			<div class="star star-3"></div>
+			<div class="star star-4"></div>
+			<div class="star star-5"></div>
+			<div class="star star-6"></div>
+			<div class="star star-7"></div>
+			<div class="star star-8"></div>
 
-			<nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Main menu', 'wprig' ); ?>"
-				<?php if ( wprig_is_amp() ) : ?>
-					[class]=" siteNavigationMenu.expanded ? 'main-navigation toggled-on' : 'main-navigation' "
-				<?php endif; ?>
-			>
-				<?php if ( wprig_is_amp() ) : ?>
-					<amp-state id="siteNavigationMenu">
-						<script type="application/json">
-							{
-								"expanded": false
-							}
-						</script>
-					</amp-state>
-				<?php endif; ?>
 
-				<button class="menu-toggle" aria-label="<?php esc_attr_e( 'Open menu', 'wprig' ); ?>" aria-controls="primary-menu" aria-expanded="false"
-					<?php if ( wprig_is_amp() ) : ?>
-						on="tap:AMP.setState( { siteNavigationMenu: { expanded: ! siteNavigationMenu.expanded } } )"
-						[aria-expanded]="siteNavigationMenu.expanded ? 'true' : 'false'"
-					<?php endif; ?>
-				>
-					<?php esc_html_e( 'Menu', 'wprig' ); ?>
-				</button>
-
-				<div class="primary-menu-container">
-					<?php
-
-					wp_nav_menu(
-						array(
-							'theme_location' => 'primary',
-							'menu_id'        => 'primary-menu',
-							'container'      => 'ul',
-						)
-					);
-
-					?>
-				</div>
-			</nav><!-- #site-navigation -->
 		</header><!-- #masthead -->

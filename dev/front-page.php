@@ -7,7 +7,7 @@
  * @package wprig
  */
 
-get_header();
+get_header( 'landing' );
 
 /*
 * Include the component stylesheet for the content.
