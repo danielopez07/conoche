@@ -23,7 +23,7 @@
 			?>
 			<div class="entry-meta">
 				<?php
-				if ( ! get_field( 'fecha_de_inicio' ) ) {
+				if ( ! get_field( 'fecha_de_finalizacion' ) ) {
 					$dateformatstring = "l d F, Y";
 					$unixtimestamp    = strtotime( get_field( 'fecha_de_inicio' ) );
 					echo esc_html( date_i18n( $dateformatstring, $unixtimestamp ) );
@@ -31,7 +31,7 @@
 					$dateformatstring = "l d F";
 					$unixtimestamp    = strtotime( get_field( 'fecha_de_inicio' ) );
 					echo 'Del ' . esc_html( date_i18n( $dateformatstring, $unixtimestamp ) );
-					$dateformatstring = "l d F, Y";
+					$dateformatstring1 = "l d F, Y";
 					$unixtimestamp    = strtotime( get_field( 'fecha_de_finalizacion' ) );
 					echo ' al ' . esc_html( date_i18n( $dateformatstring, $unixtimestamp ) );
 				}
