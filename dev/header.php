@@ -51,8 +51,8 @@
 					<?php endif; ?>
 
 					<div class="busqueda-conoche">
-						<!-- <?php get_search_form(); ?> -->
-						<?php echo do_shortcode( '[wpdreams_ajaxsearchlite]' ); ?>
+						<?php get_search_form(); ?><!-- default search -->
+						<!-- <?php echo do_shortcode( '[wpdreams_ajaxsearchlite]' ); ?> --><!-- ajax search lite plugin-->
 					</div>
 				</div><!-- titulo -->
 

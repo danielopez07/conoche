@@ -97,7 +97,8 @@ wp_print_styles( array( 'header-landing' ) ); // Note: If this was already done 
 				</div>
 			</div><!-- .site-branding -->
 			<div class="busqueda-conoche">
-						<?php get_search_form(); ?>
+				<?php get_search_form(); ?><!-- default search -->
+				<!-- <?php echo do_shortcode( '[wpdreams_ajaxsearchlite]' ); ?> --><!-- ajax search lite plugin-->
 			</div>
 			<div class="star star-1"></div>
 			<div class="star star-2"></div>
